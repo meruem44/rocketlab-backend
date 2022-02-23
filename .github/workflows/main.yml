@@ -36,7 +36,7 @@ jobs:
           target: "~/app/rocketlab-backend"
           
           
-      - name: Install dependencies on Digital Ocean
+      - name: Install dependencies on Digital Ocean and Execute Migration
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
