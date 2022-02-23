@@ -25,6 +25,7 @@ class ArticlesRepository implements IArticlesRepository {
     url,
     thumbnail,
     category,
+    credits,
   }: ICreateArticleDTO): Promise<Article> {
     const article = this.ormRepository.create({
       author,
@@ -33,6 +34,7 @@ class ArticlesRepository implements IArticlesRepository {
       url,
       thumbnail,
       category,
+      credits,
     });
 
     await this.ormRepository.save(article);

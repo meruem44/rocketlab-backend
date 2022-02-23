@@ -19,6 +19,7 @@ class CreateArticleService {
     url,
     thumbnail,
     category,
+    credits,
   }: ICreateArticleDTO): Promise<Article> {
     const checkArticleExist = await this.articlesRepository.findByName(title);
 
@@ -33,6 +34,7 @@ class CreateArticleService {
       url,
       thumbnail,
       category,
+      credits,
     });
 
     return article;

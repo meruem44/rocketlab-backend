@@ -5,4 +5,5 @@ export interface ICreateArticleDTO {
   url: string;
   thumbnail: string;
   category: "frontend" | "mobile" | "backend";
+  credits?: string;
 }

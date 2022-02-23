@@ -24,6 +24,9 @@ class Article {
   public url: string;
 
   @Column()
+  public credits: string;
+
+  @Column()
   public category: string;
 
   @Column("int")
