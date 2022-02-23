@@ -6,7 +6,7 @@ import { ListArticlesService } from "@modules/Articles/useCases/ListArticles/Lis
 
 class ArticleController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const { title, author, time_ready, url, thumbnail, category } =
+    const { title, author, time_ready, url, thumbnail, category, credits } =
       request.body;
 
     const createArticle = container.resolve(CreateArticleService);
@@ -18,6 +18,7 @@ class ArticleController {
       url,
       thumbnail,
       category,
+      credits,
     });
 
     return response.json(article);
