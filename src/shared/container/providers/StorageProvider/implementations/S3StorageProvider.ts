@@ -14,8 +14,8 @@ class S3StorageProvider implements IStorageProvider {
   constructor() {
     this.client = new aws.S3({
       region: "us-east-1",
-      accessKeyId: "AKIAZM2BOXMH7LGHGZDB",
-      secretAccessKey: "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",
+      accessKeyId: process.env.AWS_SECRET_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
     });
   }
 
@@ -24,6 +24,8 @@ class S3StorageProvider implements IStorageProvider {
 
     // Pegando o diretório do arquivo
     const originalPath = resolve(uploadConfig.directory, file);
+
+    console.log(originalPath);
 
     const ContentType = mime.getType(originalPath);
 

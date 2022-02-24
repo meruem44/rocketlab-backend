@@ -36,7 +36,7 @@ export const uploadConfig = {
   config: {
     disk: {},
     aws: {
-      bucket: "rocketlab-bucket",
+      bucket: process.env.AWS_BUCKET_NAME,
     },
   },
 } as IUploadConfig;

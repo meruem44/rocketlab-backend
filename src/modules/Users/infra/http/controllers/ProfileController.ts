@@ -25,7 +25,7 @@ class ProfileController {
       about,
     });
 
-    return response.json(user);
+    response.json(classToPlain(user));
   }
 
   public async show(request: Request, response: Response): Promise<Response> {
