@@ -45,8 +45,9 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd ~/app/rocketlab-backend
+            yarn build
             yarn
-             ./node_modules/.bin/typeorm migration run
+             ./node_modules/.bin/typeorm migration:run
              pm2 restart xplab-api
             
 
