@@ -15,7 +15,7 @@ class DevsController {
       except_user_id: id,
     });
 
-    return response.json(users);
+    return response.json(classToPlain(users));
   }
 
   public async show(request: Request, response: Response): Promise<Response> {
